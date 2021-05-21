@@ -16,12 +16,13 @@ def main():
     return render_template('app.html')
 
 @app.route('/send', methods=['POST'])
-def send(sum=sum):
+def send():
     if request.method == 'POST':
         num1 = request.form['Years']
         num1 = float(num1)
         prediction = regressor.predict(np.reshape([num1],(-1,1)))        
-        return render_template('app.html', sum=prediction[0])
+    
+    return render_template('app.html', sum='Employee Salary is $ : '+ str(prediction[0]))
        
 
 if __name__=="__main__":  
