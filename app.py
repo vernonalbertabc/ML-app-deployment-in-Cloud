@@ -22,7 +22,7 @@ def send():
         num1 = float(num1)
         prediction = regressor.predict(np.reshape([num1],(-1,1)))        
     
-    return render_template('app.html', sum='Employee Salary is $ : '+ str(round(prediction[0],2)))
+    return render_template('app.html', sum='Employee Salary is : $ '+ str(round(prediction[0],2)))
        
 
 if __name__=="__main__":  
